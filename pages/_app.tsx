@@ -1,8 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from 'react'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import type { AppProps } from 'next/app'
+import Header from '../src/components/Header/Header';
+
+import 'semantic-ui-css/semantic.min.css';
+import '../styles/globals.css'
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+	return (
+		<div>
+			<Header />
+			<Component {...pageProps} />
+		</div>
+	)
 }
 
 export default MyApp

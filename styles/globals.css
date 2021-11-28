@@ -1,3 +1,7 @@
+:root {
+  --bigTextSize: 20px;
+}
+
 html,
 body {
   padding: 0;
