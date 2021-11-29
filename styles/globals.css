@@ -1,5 +1,5 @@
 :root {
-  --bigTextSize: 20px;
+  --max-content-width: 1080px
 }
 
 html,
@@ -17,4 +17,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.page-content {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
 }

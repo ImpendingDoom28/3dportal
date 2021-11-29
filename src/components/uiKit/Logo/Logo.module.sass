@@ -9,6 +9,11 @@
 	margin-bottom: 0.25rem
 	margin-right: 5rem
 	cursor: pointer
+	transition: color $default-transition-out-time ease-in-out
+
+	&:hover
+		transition: color $default-transition-in-time ease-in-out
+		color: $accent-color
 	 
 	.logoTextWrapper
 		position: relative
@@ -16,3 +21,4 @@
 			position: absolute
 			top: 0
 			left: 0
+			
