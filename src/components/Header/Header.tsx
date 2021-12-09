@@ -9,6 +9,7 @@ import { routes } from './routes';
 import css from './Header.module.sass';
 
 const Header = () => {
+
 	return (
 		<header className={css.headerWrapper}>
 			<div className={css.header}>
