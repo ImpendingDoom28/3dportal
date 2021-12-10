@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Logo } from '../uiKit/Logo';
 import { RouteLink } from '../uiKit/RouteLink';
 
-import { routes } from './routes';
+import { authRoutes, routes } from '../../constants/routes';
 
 import css from './Header.module.sass';
 
@@ -22,7 +22,11 @@ const Header = () => {
 							return <RouteLink route={route} key={route.href}/>
 						})}
 					</nav>
-					{/* TODO: Add profile login and check */}
+					<nav className={css.navigation}>
+						{authRoutes.map((route, index) => {
+							return <RouteLink route={route} key={route.href} accented={index == 0}/>
+						})}
+					</nav>
 				</div>
 			</div>
 		</header>

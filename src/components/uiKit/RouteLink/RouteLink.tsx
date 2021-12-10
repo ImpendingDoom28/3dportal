@@ -15,14 +15,23 @@ type RouteLinkProps = {
 	route: Route,
 	passHref?: true,
 	className?: string
+	accented?: boolean
 }
 
-const RouteLink: React.FC<RouteLinkProps> = ({ children, className, route }) => {
+const RouteLink: React.FC<RouteLinkProps> = (
+	{ 
+		children, 
+		className, 
+		route, 
+		accented = false
+	}) => {
 
 	const { href, title } = route;
 
 	const linkClassName = classnames({
 		[css.link]: true,
+		[css.linkBasic]: !accented,
+		[css.linkInverted]: accented,
 		[className as string]: !!className
 	})
 

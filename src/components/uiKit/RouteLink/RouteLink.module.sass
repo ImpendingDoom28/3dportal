@@ -2,9 +2,25 @@
 	
 .link
 	cursor: pointer
-	padding: 0.25rem
+	padding: 0.5rem
 	transition: color $default-transition-out-time ease-in-out
+	transition: background-color $default-transition-out-time ease-in-out
 
 	&:hover
 		transition: color $default-transition-in-time ease-in-out
+		transition: background-color $default-transition-in-time ease-in-out
+
+.linkBasic
+	&:hover
+		color: $accent-color
+
+.linkInverted
+	padding-left: 1rem
+	padding-right: 1rem
+	border-radius: 4px
+	background-color: $accent-bg-color
+	border: 1px solid $accent-bg-color
+	color: $accent-comp-bg-color
+	&:hover
+		background-color: $accent-comp-bg-color
 		color: $accent-color
