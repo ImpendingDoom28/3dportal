@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
 import { Form, Header, Input } from "semantic-ui-react";
-import PageContainer from '@uiKit/PageContainer';
-import Informer from '@uiKit/Informer';
-import Button from '@uiKit/Button';
+import { 
+	PageContainer,
+	Informer,
+	Button
+} from "@uiKit/index";
 
-import { Controller, useForm } from 'react-hook-form';
-import { useRouter } from 'next/dist/client/router';
-import { useRegister } from '@services/AuthService';
-import { authRoutes } from '@constants/';
+import { Controller, useForm } from "react-hook-form";
+import { useRouter } from "next/dist/client/router";
+import { useRegister } from "@services/AuthService";
+import { authRoutes } from "@constants/routes";
 
-import { MessageType } from '@core/types';
+import { MessageType } from "@core/types";
 
 import css from "./RegisterPage.module.sass";
 
@@ -44,7 +46,7 @@ const RegisterPage = () => {
 	return (
 		<PageContainer>
 			<Header 
-				size='large'
+				size="large"
 				className={css.headliner}
 			>
 				{"Join us now!"}
@@ -96,7 +98,7 @@ const RegisterPage = () => {
 					/>
 				</Form.Field>
 				<Button 
-					type='submit' 
+					type="submit" 
 					fluid 
 					positive
 					loading={isLoading}

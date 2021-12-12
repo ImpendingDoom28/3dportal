@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { Button as SemanticButton, ButtonProps } from 'semantic-ui-react';
+import { Button as SemanticButton, ButtonProps } from "semantic-ui-react";
 
-import classNames from 'classnames';
+import classNames from "classnames";
 
-import css from './Button.module.sass';
+import css from "./Button.module.sass";
 
 const Button: React.FC<ButtonProps> = (props) => {
 

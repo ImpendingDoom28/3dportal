@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import css from './PageContainer.module.sass';
+import css from "./PageContainer.module.sass";
 
 const PageContainer: React.FC = ({ children }) => {
 	return (

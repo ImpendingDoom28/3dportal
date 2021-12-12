@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { NextPage } from 'next';
-import RegisterPage from '../../../src/components/pages/RegisterPage';
+// Components
+import { RegisterPage } from "@pages/RegisterPage";
+
+// Types
+import { NextPage } from "next";
 
 const Register: NextPage = () => {
 

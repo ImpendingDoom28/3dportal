@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { NextPage } from 'next';
-import { useRouter } from 'next/dist/client/router';
+import { NextPage } from "next";
+import { useRouter } from "next/dist/client/router";
 
 const ProfilePageById: NextPage = (props) => {
 	const router = useRouter()

@@ -1,16 +1,19 @@
-import React from 'react'
+import React from "react"
 
-import { QueryClientProvider, QueryClient } from 'react-query';
-import Head from 'next/head';
-import Header from '../src/components/Header';
+// Components
+import { QueryClientProvider, QueryClient } from "react-query";
+import Head from "next/head";
+import Header from "@components/Header";
 
-import { authRoutes, routes } from '../src/constants/routes';
+// Utils
+import { authRoutes, routes } from "@constants/routes";
 
-import type { AppProps } from 'next/app'
+// Types
+import type { AppProps } from "next/app"
 
 // Assets
-import 'semantic-ui-css/semantic.min.css';
-import '../styles/globals.css'
+import "semantic-ui-css/semantic.min.css";
+import "../styles/globals.css"
 
 const queryClient = new QueryClient()
 
@@ -26,9 +29,10 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 			<Head>
         		<title>{pageTitle}</title>
         		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<link rel="icon" href="/favicon.ico" />
       		</Head>
 			<Header />
-			<div className='page-content'>
+			<div className="page-content">
 				<Component {...pageProps} />
 			</div>
 		</QueryClientProvider>

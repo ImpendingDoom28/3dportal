@@ -2,6 +2,9 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "indent": ["error", "tab"],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "prefer-const": ["error"]
   }
 }

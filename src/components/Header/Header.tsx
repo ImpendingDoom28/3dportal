@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import Link from 'next/link';
-import { Logo } from '../uiKit/Logo';
-import { RouteLink } from '../uiKit/RouteLink';
+import Link from "next/link";
+import { Logo, RouteLink } from "@uiKit/index";
 
-import { authRoutes, routes } from '../../constants/routes';
+import { authRoutes, routes } from "@constants/routes";
 
-import css from './Header.module.sass';
+import css from "./Header.module.sass";
 
 const Header = () => {
 

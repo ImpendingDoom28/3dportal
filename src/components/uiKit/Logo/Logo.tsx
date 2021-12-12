@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Image from 'next/image';
+// Components
+import Image from "next/image";
 
-import portalLogo from "../../../../public/logo.png";
+// Assets
+import portalLogo from "@public/logo.png";
 import css from "./Logo.module.sass";
 
 const Logo = React.forwardRef<HTMLDivElement>((props, ref) => {

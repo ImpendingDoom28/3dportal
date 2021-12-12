@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import { useRouter } from 'next/dist/client/router';
-import { routes } from '@constants/routes';
+import { useRouter } from "next/dist/client/router";
+import { routes } from "@constants/routes";
 
-import type { NextPage } from 'next';
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
 

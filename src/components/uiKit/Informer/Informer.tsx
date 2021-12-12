@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import { Icon, Message as SemanticMessage } from 'semantic-ui-react';
+import { Icon, Message as SemanticMessage } from "semantic-ui-react";
 
 // Types
-import { AxiosError } from 'axios';
-import { Message } from '../../../core/types';
+import { AxiosError } from "axios";
+import { Message } from "@core/types";
 
 type InformerProps = {
 	error?: AxiosError<Message> | null
@@ -33,7 +33,7 @@ const Informer: React.FC<InformerProps> = ({ error, hidden }) => {
 			hidden={hidden}
 			icon
 		>
-			{!!error && <Icon corner name='warning' /> }
+			{!!error && <Icon corner name="warning" /> }
 			<SemanticMessage.Content>
 				<SemanticMessage.Header>{data.type}</SemanticMessage.Header>
 				{data.message}

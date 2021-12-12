@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 
 import { Form, Header, Input } from "semantic-ui-react";
-import PageContainer from '../../uiKit/PageContainer';
-import Informer from '../../uiKit/Informer';
-import Button from '../../uiKit/Button';
+import { 
+	PageContainer,
+	Informer,
+	Button
+} from "@uiKit/index";
 
-import { Controller, useForm } from 'react-hook-form';
-import { useLogin } from '../../../core/services/AuthService';
-import { useRouter } from 'next/dist/client/router';
-import { authRoutes } from '../../../constants/routes';
-
-import { MessageType } from '../../../core/types';
+import { Controller, useForm } from "react-hook-form";
+import { useLogin } from "@services/AuthService";
 
 import css from "./LoginPage.module.sass";
 
@@ -21,24 +19,18 @@ const LoginPage = () => {
 	} = useForm();
 
 	const { 
-		mutateAsync, 
-		isError, 
-		isLoading, 
-		error, 
-		reset 
+		mutateAsync,
+		isError,
+		isLoading,
+		error,
+		reset
 	} = useLogin();
-
-	const router = useRouter();
 
 	const onSubmit = async (data: any) => {
 		reset();
 		await mutateAsync(data)
 			.then((res) => {
-				if (res.type === MessageType.SUCCESS.toUpperCase()) {
-					console.log(authRoutes[0].href)
-					router.push(authRoutes[0].href)
-				}
-			})
+			});
 	}
 
 	return (
@@ -97,7 +89,7 @@ const LoginPage = () => {
 					/>
 				</Form.Field>
 				<Button 
-					type='submit' 
+					type="submit" 
 					fluid 
 					positive
 					loading={isLoading}

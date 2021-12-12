@@ -1,4 +1,4 @@
-import { Route } from "../core/types";
+import { Route } from "@core/types";
 
 export const routes: readonly Route[] = [
 	{
@@ -11,7 +11,7 @@ export const routes: readonly Route[] = [
 	} as const,
 ] as const
 
-const baseAuthRoute = '/auth';
+const baseAuthRoute = "/auth";
 
 export const authRoutes: readonly Route[] = [
 	{

@@ -1,2 +1,2 @@
-export * from './LoginForm.type';
-export * from './RegisterForm.type';
+export * from "./LoginForm.type";
+export * from "./RegisterForm.type";

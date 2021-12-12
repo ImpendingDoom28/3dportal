@@ -1,7 +1,7 @@
-import { AuthUrls } from "../urls/AuthUrls";
+import { AuthUrls } from "@urls/AuthUrls";
 import { BaseRepository } from "./BaseRepository";
 
-import { Message, LoginForm, RegisterForm } from "../types";
+import { Message, LoginForm, RegisterForm } from "@core/types";
 
 export class AuthRepository extends BaseRepository<AuthUrls> {
 	

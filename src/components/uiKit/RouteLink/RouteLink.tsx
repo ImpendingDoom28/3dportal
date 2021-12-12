@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import Link from 'next/link';
+import Link from "next/link";
 
 // Utils
-import classnames from 'classnames';
-import { Route } from '../../../core/types';
+import classnames from "classnames";
+import { Route } from "@core/types";
 
 // Assets
-import css from './RouteLink.module.sass';
+import css from "./RouteLink.module.sass";
 
 
 type RouteLinkProps = {

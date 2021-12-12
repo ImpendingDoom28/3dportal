@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import LoginPage from '../../../src/components/pages/LoginPage';
+// Components
+import { LoginPage } from "@pages/LoginPage";
 
-import { NextPage } from 'next';
+// Types
+import { NextPage } from "next";
 
 const Login: NextPage = () => {
 	return (

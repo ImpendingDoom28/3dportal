@@ -16,15 +16,21 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@constants/*": ["src/constants/*", "src/constants"],
-      "@components/*": ["src/components/*", "src/components"],
-      "@uiKit/*": ["src/components/uiKit/*", "src/components/uiKit"],
-      "@core/*": ["src/core/*", "src/core"],
-      "@services/*": ["src/core/services/*", "src/core/services"],
-      "@repositories/*": ["src/core/repositories/*","src/core/repositories"],
-      "@types/*": ["src/core/types/*", "src/core/types"],
-      "@modules/*": ["src/core/modules/*", "src/core/modules"],
-      "@urls/*": ["src/core/urls/*", "src/core/urls"],
+      "@public/*": ["public/*"],
+      "@constants/*": ["src/constants/*", "src/constants/"],
+      "@components/*": ["src/components/*", "src/components/"],
+      "@uiKit/*": [
+        "src/components/uiKit/*", "src/components/uiKit/", "src/components/uiKit"
+      ],
+      "@pages/*": [
+        "src/components/pages/*", "src/components/pages/", "src/components/pages"
+      ],
+      "@core/*": ["src/core/*", "src/core/"],
+      "@services/*": ["src/core/services/*", "src/core/services/"],
+      "@repositories/*": ["src/core/repositories/*","src/core/repositories/"],
+      "@types/*": ["src/core/types/*", "src/core/types/"],
+      "@modules/*": ["src/core/modules/*", "src/core/modules/"],
+      "@urls/*": ["src/core/urls/*", "src/core/urls/"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

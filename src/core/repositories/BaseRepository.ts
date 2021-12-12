@@ -1,5 +1,5 @@
-import { API } from '../modules/API';
-import { BaseUrls }  from '../urls/BaseUrls';
+import { API } from "@modules/API";
+import { BaseUrls }  from "@urls/BaseUrls";
 
 export class BaseRepository<T extends BaseUrls> {
 
