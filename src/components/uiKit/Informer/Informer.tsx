@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon, Message as SemanticMessage } from 'semantic-ui-react';
 
 import { AxiosError } from 'axios';
-import { Message } from '../../../types/message.type';
+import { Message } from '../../../core/types/message.type';
 
 type InformerProps = {
 	error?: AxiosError<Message> | null

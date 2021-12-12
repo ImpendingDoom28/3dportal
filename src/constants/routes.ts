@@ -1,4 +1,4 @@
-import { Route } from "../types/route.type";
+import { Route } from "../core/types/route.type";
 
 export const routes: readonly Route[] = [
 	{

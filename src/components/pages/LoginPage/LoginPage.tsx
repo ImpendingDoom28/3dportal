@@ -6,11 +6,11 @@ import Informer from '../../uiKit/Informer';
 import Button from '../../uiKit/Button';
 
 import { Controller, useForm } from 'react-hook-form';
-import { useRegister } from '../../../core/services/AuthService';
+import { useLogin } from '../../../core/services/AuthService';
 import { useRouter } from 'next/dist/client/router';
 import { authRoutes } from '../../../constants/routes';
 
-import { MessageType } from '../../../types/message.type';
+import { MessageType } from '../../../core/types/message.type';
 
 import css from "./LoginPage.module.sass";
 
@@ -26,7 +26,7 @@ const LoginPage = () => {
 		isLoading, 
 		error, 
 		reset 
-	} = useRegister();
+	} = useLogin();
 
 	const router = useRouter();
 
