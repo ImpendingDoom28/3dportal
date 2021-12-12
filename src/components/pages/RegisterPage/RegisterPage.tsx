@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { Form, Header, Input } from "semantic-ui-react";
-import PageContainer from '../../uiKit/PageContainer';
-import Informer from '../../uiKit/Informer';
-import Button from '../../uiKit/Button';
+import PageContainer from '@uiKit/PageContainer';
+import Informer from '@uiKit/Informer';
+import Button from '@uiKit/Button';
 
 import { Controller, useForm } from 'react-hook-form';
-import { useRegister } from '../../../core/services/AuthService';
 import { useRouter } from 'next/dist/client/router';
-import { authRoutes } from '../../../constants/routes';
+import { useRegister } from '@services/AuthService';
+import { authRoutes } from '@constants/';
 
-import { MessageType } from '../../../core/types';
+import { MessageType } from '@core/types';
 
 import css from "./RegisterPage.module.sass";
 
