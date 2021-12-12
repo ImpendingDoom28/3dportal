@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 // Utils
 import classnames from 'classnames';
-import { Route } from '../../../core/types/route.type';
+import { Route } from '../../../core/types';
 
 // Assets
 import css from './RouteLink.module.sass';

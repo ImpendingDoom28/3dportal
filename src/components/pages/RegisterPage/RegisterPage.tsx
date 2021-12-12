@@ -10,7 +10,7 @@ import { useRegister } from '../../../core/services/AuthService';
 import { useRouter } from 'next/dist/client/router';
 import { authRoutes } from '../../../constants/routes';
 
-import { MessageType } from '../../../core/types/message.type';
+import { MessageType } from '../../../core/types';
 
 import css from "./RegisterPage.module.sass";
 

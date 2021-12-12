@@ -2,8 +2,7 @@ import { AxiosError } from "axios";
 import { useMutation } from "react-query";
 import { AuthRepository } from "../repositories/AuthRepository";
 
-import { RegisterForm } from "../types/forms/RegisterForm.type";
-import { Message } from "../types/message.type";
+import { RegisterForm, LoginForm, Message } from "../types";
 
 const repository = new AuthRepository();
 

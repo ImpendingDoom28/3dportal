@@ -1,8 +1,7 @@
 import { AuthUrls } from "../urls/AuthUrls";
 import { BaseRepository } from "./BaseRepository";
 
-import { RegisterForm } from "../types/forms/RegisterForm.type";
-import { Message } from "../types/message.type";
+import { Message, LoginForm, RegisterForm } from "../types";
 
 export class AuthRepository extends BaseRepository<AuthUrls> {
 	
@@ -10,8 +9,9 @@ export class AuthRepository extends BaseRepository<AuthUrls> {
 		super(new AuthUrls());
 	}
 
-	public login() {
-		return this.urls.loginUrl
+	public login(data: LoginForm) {
+		return this.api.post<Message>(this.urls.loginUrl, data)
+			.then((response) => response.data)
 	}
 
 	register(data: RegisterForm) {

@@ -1,9 +1,11 @@
 import React from 'react';
 
+// Components
 import { Icon, Message as SemanticMessage } from 'semantic-ui-react';
 
+// Types
 import { AxiosError } from 'axios';
-import { Message } from '../../../core/types/message.type';
+import { Message } from '../../../core/types';
 
 type InformerProps = {
 	error?: AxiosError<Message> | null
