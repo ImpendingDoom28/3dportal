@@ -1,7 +1,12 @@
 import { AuthUrls } from "@urls/AuthUrls";
 import { BaseRepository } from "./BaseRepository";
 
-import { Message, LoginForm, RegisterForm } from "@core/types";
+import { 
+	MessageDto, 
+	LoginDto, 
+	LoginForm, 
+	RegisterForm, 
+} from "@core/types";
 
 export class AuthRepository extends BaseRepository<AuthUrls> {
 	
@@ -10,12 +15,12 @@ export class AuthRepository extends BaseRepository<AuthUrls> {
 	}
 
 	public login(data: LoginForm) {
-		return this.api.post<Message>(this.urls.loginUrl, data)
+		return this.api.post<LoginDto>(this.urls.loginUrl, data)
 			.then((response) => response.data)
 	}
 
 	register(data: RegisterForm) {
-		return this.api.post<Message>(this.urls.registerUrl, data)
+		return this.api.post<MessageDto>(this.urls.registerUrl, data)
 			.then((response) => response.data)
 	}
 }

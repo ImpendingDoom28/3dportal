@@ -2,12 +2,12 @@ import { useMutation } from "react-query";
 import { AuthRepository } from "@repositories/AuthRepository";
 
 import { AxiosError } from "axios";
-import { RegisterForm, LoginForm, Message } from "@core/types";
+import { RegisterForm, LoginForm, MessageDto, LoginDto } from "@core/types";
 
 const repository = new AuthRepository();
 
 export const useRegister = () => {
-	return useMutation<Message, AxiosError<Message>, RegisterForm>(
+	return useMutation<MessageDto, AxiosError<MessageDto>, RegisterForm>(
 		(data) => {
 			return repository.register(data);
 		}, 
@@ -16,7 +16,12 @@ export const useRegister = () => {
 }
 
 export const useLogin = () => {
-	return useMutation<any, AxiosError<Message>, LoginForm>(
+	/**
+	 * <1> - What will return
+	 * <2> - What will be if error
+	 * <3> - What should be passed to 'mutate' func
+	 *  */ 
+	return useMutation<LoginDto, AxiosError<MessageDto>, LoginForm>(
 		(data) => {
 			return repository.login(data);
 		}

@@ -1,3 +1,3 @@
 export * from "./forms";
-export * from "./Message.type";
-export * from "./Route.type";
+export * from "./dtos";
+export * from "./models";

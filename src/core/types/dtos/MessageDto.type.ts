@@ -3,7 +3,7 @@ export enum MessageType {
 	SUCCESS = "Success",
 }
 
-export type Message = {
+export type MessageDto = {
 	type: MessageType;
 	message: string;
 }

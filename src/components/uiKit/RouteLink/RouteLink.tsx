@@ -5,14 +5,14 @@ import Link from "next/link";
 
 // Utils
 import classnames from "classnames";
-import { Route } from "@core/types";
+import { RouteModel } from "@core/types";
 
 // Assets
 import css from "./RouteLink.module.sass";
 
 
 type RouteLinkProps = {
-	route: Route,
+	route: RouteModel,
 	passHref?: true,
 	className?: string
 	accented?: boolean

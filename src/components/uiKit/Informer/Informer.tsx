@@ -5,10 +5,10 @@ import { Icon, Message as SemanticMessage } from "semantic-ui-react";
 
 // Types
 import { AxiosError } from "axios";
-import { Message } from "@core/types";
+import { MessageDto } from "@core/types";
 
 type InformerProps = {
-	error?: AxiosError<Message> | null
+	error?: AxiosError<MessageDto> | null
 	hidden?: boolean
 }
 
