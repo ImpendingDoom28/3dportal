@@ -37,7 +37,6 @@ const RegisterPage = () => {
 		await mutateAsync(data)
 			.then((res) => {
 				if (res.type === MessageType.SUCCESS.toUpperCase()) {
-					console.log(authRoutes[0].href)
 					router.push(authRoutes[0].href)
 				}
 			})
