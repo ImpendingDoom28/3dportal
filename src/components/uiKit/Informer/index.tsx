@@ -1,1 +1,1 @@
-export { default as Informer } from './Informer';
+export { default as Informer } from "./Informer";
