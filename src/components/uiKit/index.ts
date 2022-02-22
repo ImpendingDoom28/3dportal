@@ -3,3 +3,4 @@ export * from "./Informer";
 export * from "./Logo";
 export * from "./PageContainer";
 export * from "./RouteLink";
+export * from "./LogoutButton";

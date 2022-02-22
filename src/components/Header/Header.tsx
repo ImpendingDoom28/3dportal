@@ -1,7 +1,7 @@
 import React from "react";
 
 import Link from "next/link";
-import { Logo, RouteLink } from "@uiKit/index";
+import { Logo, LogoutButton, RouteLink } from "@uiKit/index";
 import { UserBadge } from "../UserBadge";
 
 import { authRoutes, navRoutes, userRoutes } from "@constants/routes";
@@ -30,7 +30,7 @@ const Header = () => {
 							currentUser ? (
 								<>
 									<UserBadge user={currentUser} /> 
-									<RouteLink route={userRoutes[0]} accented/>
+									<LogoutButton />
 								</>
 							) : (
 								<>

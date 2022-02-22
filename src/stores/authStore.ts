@@ -13,6 +13,7 @@ type AuthStoreType = {
 	setRefreshToken: (refreshToken: AuthStoreType["refreshToken"]) => void,
 	setTokens: (accessToken: AuthStoreType["accessToken"], refreshToken: AuthStoreType["refreshToken"]) => void,
 	initStore: () => void;
+	resetStore: () => void;
 }
 
 export const useAuthStore = create<AuthStoreType>((set, get) => ({
@@ -51,5 +52,14 @@ export const useAuthStore = create<AuthStoreType>((set, get) => ({
 			get().setRefreshToken(allCookies["refreshToken"]);
 			set({ isInitialised: true });
 		}
+	},
+	resetStore: () => {
+		Cookies.remove("accessToken");
+		Cookies.remove("refreshToken");
+		set({
+			currentUser: null,
+			accessToken: null,
+			refreshToken: null
+		})
 	}
 }));
