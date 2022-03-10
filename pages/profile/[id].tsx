@@ -1,13 +1,21 @@
 import React from "react";
 
-import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 
-const ProfilePageById: NextPage = (props) => {
-	const router = useRouter()
-  	const { id } = router.query
+import { NextPage } from "next";
+import { useAuthStore } from "../../src/stores";
 
-	return <div>{`selected profile: ${id}`}</div>
+const ProfilePageById: NextPage = () => {
+	const router = useRouter();
+  	const { id } = router.query;
+
+	const currentUser = useAuthStore((state) => state.currentUser);
+
+	return (
+		<div>
+			{currentUser?.id === id ? "this is my profile" : `selected profile: ${id}`}
+		</div>
+	)
 }
 
 export default ProfilePageById;

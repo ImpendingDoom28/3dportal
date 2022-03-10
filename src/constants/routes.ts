@@ -16,7 +16,7 @@ const baseAuthRoute = "/auth";
 export const authRoutes: readonly RouteModel[] = [
 	{
 		href: `${baseAuthRoute}/login`,
-		title: "Login",
+		title: "Log in",
 	} as const,
 	{
 		href: `${baseAuthRoute}/register`,

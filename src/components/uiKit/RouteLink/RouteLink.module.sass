@@ -3,6 +3,10 @@
 .link
 	cursor: pointer
 	padding: 0.5rem
+	transition: background $default-transition-in-time ease-in-out, border-image-source $default-transition-in-time ease-in-out, border-image-slice $default-transition-in-time ease-in-out
+	&:hover
+		text-decoration: underline
+		transition: color $default-transition-in-time ease-in-out, background $default-transition-in-time ease-in-out, border-image-source $default-transition-in-time ease-in-out
 
 .linkBasic
 	&:hover
