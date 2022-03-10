@@ -8,7 +8,10 @@ import {
 } from "@uiKit/index";
 
 import { Controller, useForm } from "react-hook-form";
+import { useRouter } from "next/dist/client/router";
 import { useLogin } from "@services/AuthService";
+import { useAuthStore } from "@stores/authStore";
+import { navRoutes } from "@constants/routes";
 
 import css from "./LoginPage.module.sass";
 
@@ -26,10 +29,15 @@ const LoginPage = () => {
 		reset
 	} = useLogin();
 
+	const router = useRouter();
+
+	const setTokens = useAuthStore(state => state.setTokens);
 	const onSubmit = async (data: any) => {
 		reset();
 		await mutateAsync(data)
 			.then((res) => {
+				setTokens(res.accessToken, res.refreshToken);
+				router.push(navRoutes[0].href);
 			});
 	}
 

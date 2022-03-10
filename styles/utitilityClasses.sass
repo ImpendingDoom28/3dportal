@@ -1,0 +1,16 @@
+@import "styles/variables.sass"
+	
+.accent
+	padding-left: 1rem
+	padding-right: 1rem
+	border-image-source: linear-gradient(to right, $accent-color, #eaafc8)
+	border-image-slice: 1
+	border-style: solid
+	border-width: 1px 
+	color: $accent-color
+	transition: background $default-transition-in-time ease-in-out, border-image-source $default-transition-in-time ease-in-out, border-image-slice $default-transition-in-time ease-in-out
+	&:hover
+		transition: color $default-transition-in-time ease-in-out, background $default-transition-in-time ease-in-out, border-image-source $default-transition-in-time ease-in-out
+		background: linear-gradient(to right, $accent-color, #eaafc8)
+		color: $accent-comp-color
+		border-image-source: none

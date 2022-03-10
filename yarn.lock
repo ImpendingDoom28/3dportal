@@ -283,6 +283,11 @@
     exenv "^1.2.2"
     prop-types "^15.6.2"
 
+"@types/js-cookie@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.1.tgz#04aa743e2e0a85a22ee9aa61f6591a8bc19b5d68"
+  integrity sha512-7wg/8gfHltklehP+oyJnZrz9XBuX5ZPP4zB6UsI84utdlkRYLnOm2HfpLXazTwZA+fpGn0ir8tGNgVnMEleBGQ==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
@@ -1883,6 +1888,11 @@ jquery@x.*:
   resolved "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
+js-cookie@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/js-cookie/-/js-cookie-3.0.1.tgz"
+  integrity sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==
+
 js-sha3@0.8.0:
   version "0.8.0"
   resolved "https://registry.npmjs.org/js-sha3/-/js-sha3-0.8.0.tgz"
@@ -2560,7 +2570,7 @@ react-fast-compare@^3.0.1:
 
 react-hook-form@^7.21.0:
   version "7.21.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.21.0.tgz#f6f0311295b83ca768873ca9f2a787ff1525f591"
+  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.21.0.tgz"
   integrity sha512-aekCf+dedYFIg+7nCK2acMvZ+s6Ohw2I7UNQ+zNIadBl1SoXow2Tl6c3F49xF8GFCdn5jeK43JHH26rmtdRyLQ==
 
 react-is@17.0.2, "react-is@^16.8.6 || ^17.0.0":
@@ -3306,3 +3316,8 @@ zustand@^3.5.1:
   version "3.6.5"
   resolved "https://registry.npmjs.org/zustand/-/zustand-3.6.5.tgz"
   integrity sha512-/WfLJuXiEJimt61KGMHebrFBwckkCHGhAgVXTgPQHl6IMzjqm6MREb1OnDSnCRiSmRdhgdFCctceg6tSm79hiw==
+
+zustand@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.npmjs.org/zustand/-/zustand-3.7.1.tgz"
+  integrity sha512-wHBCZlKj+bg03/hP+Tzv24YhnqqP8MCeN9ECPDXoF01062SIbnfl3j9O0znkDw1lNTY0a8WN3F///a0UhhaEqg==

@@ -1,6 +1,6 @@
 import { RouteModel } from "@core/types";
 
-export const routes: readonly RouteModel[] = [
+export const navRoutes: readonly RouteModel[] = [
 	{
 		href: "/models",
 		title: "Models",
@@ -22,4 +22,11 @@ export const authRoutes: readonly RouteModel[] = [
 		href: `${baseAuthRoute}/register`,
 		title: "No account?",
 	} as const,
+] as const
+
+export const userRoutes: readonly RouteModel[] = [
+	{
+		href: "/profile",
+		title: "Profile",
+	} as const
 ] as const
