@@ -9,13 +9,15 @@ import {
 
 import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/dist/client/router";
-import { useLogin } from "@services/AuthService";
+import { useLogin, useRedirectIfLoggedIn } from "@services/AuthService";
 import { useAuthStore } from "@stores/authStore";
 import { navRoutes } from "@constants/routes";
 
 import css from "./LoginPage.module.sass";
 
 const LoginPage = () => {
+	useRedirectIfLoggedIn();
+
 	const {
 		handleSubmit, 
 		control,

@@ -9,7 +9,7 @@ import {
 
 import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/dist/client/router";
-import { useRegister } from "@services/AuthService";
+import { useRedirectIfLoggedIn, useRegister } from "@services/AuthService";
 import { authRoutes } from "@constants/routes";
 
 import { MessageType } from "@core/types";
@@ -17,6 +17,8 @@ import { MessageType } from "@core/types";
 import css from "./RegisterPage.module.sass";
 
 const RegisterPage = () => {
+	useRedirectIfLoggedIn();
+
 	const {
 		handleSubmit, 
 		control,

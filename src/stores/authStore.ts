@@ -3,6 +3,7 @@ import create from "zustand";
 import Cookies from "js-cookie";
 import { UserTokenResponseModel } from "@core/types/models";
 import { AccessTokenBody } from "@core/types/utility";
+import { ACCESS_TOKEN_COOKIE_NAME, REFRESH_TOKEN_COOKIE_NAME } from "../constants";
  
 type AuthStoreType = {
 	currentUser: UserTokenResponseModel | null,
@@ -22,20 +23,22 @@ export const useAuthStore = create<AuthStoreType>((set, get) => ({
 	refreshToken: null,
 	isInitialised: false,
 	setAccessToken: (accessToken: AuthStoreType["accessToken"]) => {
-		if(accessToken) {
-			Cookies.set("accessToken", accessToken);
+		if (accessToken) {
+			Cookies.set(ACCESS_TOKEN_COOKIE_NAME, accessToken);
 
-			const userInfo: AccessTokenBody = JSON.parse(atob( accessToken?.split(".")[1]));
+			const userInfo: AccessTokenBody = JSON.parse(atob(accessToken?.split(".")[1]));
 
-			set({ currentUser: {
-				email: userInfo.email,
-				id: userInfo.sub
-			} })
+			set({
+				currentUser: {
+					email: userInfo.email,
+					id: userInfo.sub
+				}
+			})
 		}
 		set({ accessToken })
 	},
 	setRefreshToken: (refreshToken: AuthStoreType["refreshToken"]) => {
-		if(refreshToken) Cookies.set("refreshToken", refreshToken);
+		if (refreshToken) Cookies.set(REFRESH_TOKEN_COOKIE_NAME, refreshToken);
 		set({ refreshToken })
 	},
 	setTokens: (accessToken: AuthStoreType["accessToken"], refreshToken: AuthStoreType["refreshToken"]) => {
@@ -46,16 +49,16 @@ export const useAuthStore = create<AuthStoreType>((set, get) => ({
 		set({ isInitialised })
 	},
 	initStore: () => {
-		if(!get().isInitialised) {
+		if (!get().isInitialised) {
 			const allCookies = Cookies.get();
-			get().setAccessToken(allCookies["accessToken"]);
-			get().setRefreshToken(allCookies["refreshToken"]);
+			get().setAccessToken(allCookies[ACCESS_TOKEN_COOKIE_NAME]);
+			get().setRefreshToken(allCookies[REFRESH_TOKEN_COOKIE_NAME]);
 			set({ isInitialised: true });
 		}
 	},
 	resetStore: () => {
-		Cookies.remove("accessToken");
-		Cookies.remove("refreshToken");
+		Cookies.remove(ACCESS_TOKEN_COOKIE_NAME);
+		Cookies.remove(REFRESH_TOKEN_COOKIE_NAME);
 		set({
 			currentUser: null,
 			accessToken: null,

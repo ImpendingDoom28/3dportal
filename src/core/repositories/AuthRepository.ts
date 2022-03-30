@@ -19,7 +19,7 @@ export class AuthRepository extends BaseRepository<AuthUrls> {
 			.then((response) => response.data)
 	}
 
-	register(data: RegisterForm) {
+	public register(data: RegisterForm) {
 		return this.api.post<MessageDto>(this.urls.registerUrl, data)
 			.then((response) => response.data)
 	}

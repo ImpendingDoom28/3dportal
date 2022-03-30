@@ -27,7 +27,7 @@ export const LogoutButton = () => {
 			onOpen={onOpen}
 			open={open}
 			trigger={
-				<Button accented>
+				<Button accented={true}>
 					{"Log out"}
 				</Button>
 			}

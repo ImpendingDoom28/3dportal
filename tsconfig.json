@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -14,27 +18,70 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "",
     "paths": {
-      "@public/*": ["public/*"],
-      "@constants/*": ["src/constants/*", "src/constants/", "src/constants"],
-      "@components/*": ["src/components/*", "src/components/"],
+      "@public/*": [
+        "public/*"
+      ],
+      "@constants/*": [
+        "src/constants/*",
+        "src/constants/",
+        "src/constants"
+      ],
+      "@components/*": [
+        "src/components/*",
+        "src/components/"
+      ],
       "@uiKit/*": [
-        "src/components/uiKit/*", "src/components/uiKit/", "src/components/uiKit"
+        "src/components/uiKit/*",
+        "src/components/uiKit/",
+        "src/components/uiKit"
       ],
       "@pages/*": [
-        "src/components/pages/*", "src/components/pages/", "src/components/pages"
+        "src/components/pages/*",
+        "src/components/pages/",
+        "src/components/pages"
       ],
       "@stores/*": [
-        "src/stores/*", "src/stores/", "src/stores"
+        "src/stores/*",
+        "src/stores"
       ],
-      "@core/*": ["src/core/*", "src/core/", "src/core"],
-      "@services/*": ["src/core/services/*", "src/core/services/"],
-      "@repositories/*": ["src/core/repositories/*","src/core/repositories/"],
-      "@modules/*": ["src/core/modules/*", "src/core/modules/"],
-      "@urls/*": ["src/core/urls/*", "src/core/urls/"],
+      "$stores/*": [
+        "src/stores/*",
+        "src/stores"
+      ],
+      "stores/*": [
+        "src/stores/*",
+      ],
+      "@core/*": [
+        "src/core/*",
+        "src/core/",
+        "src/core"
+      ],
+      "@services/*": [
+        "src/core/services/*",
+        "src/core/services/"
+      ],
+      "@repositories/*": [
+        "src/core/repositories/*",
+        "src/core/repositories/"
+      ],
+      "@modules/*": [
+        "src/core/modules/*",
+        "src/core/modules/"
+      ],
+      "@urls/*": [
+        "src/core/urls/*",
+        "src/core/urls/"
+      ],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

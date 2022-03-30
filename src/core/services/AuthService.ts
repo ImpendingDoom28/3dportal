@@ -3,6 +3,9 @@ import { AuthRepository } from "@repositories/AuthRepository";
 
 import { AxiosError } from "axios";
 import { RegisterForm, LoginForm, MessageDto, LoginDto } from "@core/types";
+import { useAuthStore } from "../../stores";
+import { useRouter } from "next/dist/client/router";
+import { navRoutes } from "../../constants";
 
 const repository = new AuthRepository();
 
@@ -28,4 +31,10 @@ export const useLogin = () => {
 	)
 }
 
-export const useAuthentication = () => {}
+export const useRedirectIfLoggedIn = () => {
+	const { accessToken } = useAuthStore();
+	const router = useRouter();
+	if (accessToken) {
+		router.push(navRoutes[0].href)
+	}
+}
