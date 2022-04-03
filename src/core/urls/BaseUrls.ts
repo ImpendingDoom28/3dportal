@@ -6,4 +6,8 @@ export class BaseUrls {
 	protected get profileUrl() {
 		return "/profile";
 	}
+
+	protected get modelsUrl() {
+		return "/models";
+	}
 }
