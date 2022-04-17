@@ -1,10 +1,31 @@
 import React from "react";
 
+import classNames from "classnames";
+
 import css from "./PageContainer.module.sass";
 
-const PageContainer: React.FC = ({ children }) => {
+type PageContainerProps = {
+	className?: string;
+	style?: React.CSSProperties
+}
+
+const PageContainer: React.FC<PageContainerProps> = (
+	{ 
+		children,
+		style,
+		className 
+	}) => {
+	
+	const classnames = classNames({
+		[css.container]: true,
+		[className as string]: !!className 
+	});
+
 	return (
-		<div className={css.container}>
+		<div 
+			className={classnames}
+			style={style}
+		>
 			{children}
 		</div>
 	);

@@ -8,25 +8,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/fiber": "^7.0.21",
+    "@hookform/error-message": "^2.0.0",
+    "@react-three/drei": "9.3.4",
+    "@react-three/fiber": "8.0.10",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "js-cookie": "^3.0.1",
-    "next": "12.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "latest",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-hook-form": "^7.21.0",
     "react-query": "^3.33.7",
     "sass": "^1.43.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.4",
-    "three": "^0.135.0",
+    "three": "0.139.2",
     "zustand": "^3.7.1"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.1",
     "@types/node": "16.11.9",
-    "@types/react": "17.0.35",
+    "@types/react": "^18.0.5",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "typescript": "4.5.2"

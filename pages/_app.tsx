@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 // Components
 import { QueryClientProvider, QueryClient } from "react-query";
 import Head from "next/head";
-import Header from "@components/Header";
+import Header from "@components/AppHeader";
 
 // Utils
 import App from "next/app";
@@ -27,7 +27,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 	});
 	const pageTitle = currentRoute ? `3Dportal | ${currentRoute.title}` : "3Dportal";
 
-	const initUserInfo = useAuthStore(state => state.initStore);
+	const {
+		initUserInfo,
+	} = useAuthStore((state) => ({
+		initUserInfo: state.initStore,
+	}));
 
 	useEffect(() => {
 		initUserInfo();

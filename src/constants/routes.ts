@@ -3,11 +3,11 @@ import { RouteModel } from "@core/types";
 export const navRoutes: readonly RouteModel[] = [
 	{
 		href: "/models",
-		title: "Models",
+		title: "Модели",
 	} as const,
 	{
 		href: "/instruments",
-		title: "Instruments",
+		title: "Инструменты",
 	} as const,
 ] as const
 
@@ -16,17 +16,17 @@ const baseAuthRoute = "/auth";
 export const authRoutes: readonly RouteModel[] = [
 	{
 		href: `${baseAuthRoute}/login`,
-		title: "Log in",
+		title: "Войти",
 	} as const,
 	{
 		href: `${baseAuthRoute}/register`,
-		title: "No account?",
+		title: "Нет аккаунта?",
 	} as const,
 ] as const
 
 export const userRoutes: readonly RouteModel[] = [
 	{
 		href: "/profile",
-		title: "Profile",
+		title: "Профиль",
 	} as const
 ] as const

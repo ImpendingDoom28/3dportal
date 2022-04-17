@@ -27,18 +27,18 @@ export const LogoutButton = () => {
 			onOpen={onOpen}
 			open={open}
 			trigger={
-				<Button accented={true}>
-					{"Log out"}
+				<Button accented>
+					{"Выйти"}
 				</Button>
 			}
 			closeIcon
 		>
 			<Modal.Header>
-				{"Want to log out?"}
+				{"Хотите выйти из аккаунта?"}
 			</Modal.Header>
 			<Modal.Content image>
 				<Modal.Description>
-					{"If you log out, you will have to log in again in order to get to some features available only for logged in users"}
+					{"Если вы выйдите, вам нужно будет заново войти, что бы получить доступ к возможностям, доступным только вошедшим пользователям"}
 				</Modal.Description>
 			</Modal.Content>
 			<Modal.Actions>
@@ -46,12 +46,12 @@ export const LogoutButton = () => {
 					onClick={onClose}
 					color="black"
 				>
-					{"I changed my mind"}
+					{"Я передумал"}
 				</Button>
 				<Button
-					content="Log out"
+					content={"Выйти"}
 					labelPosition="right"
-					icon="checkmark"
+					icon="close"
 					onClick={onLogout}
 					negative 
 				/>

@@ -30,7 +30,7 @@ const RouteLink: React.FC<RouteLinkProps> = (
 	const linkClassName = classnames({
 		[css.link]: true,
 		[css.linkBasic]: !accented,
-		["accent"]: accented,
+		["accented"]: accented,
 		[className as string]: !!className
 	})
 

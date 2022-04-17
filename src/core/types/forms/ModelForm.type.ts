@@ -1,3 +1,4 @@
 export type ModelForm = { 
-	files: FileList 
+	files: FileList,
+	givenName: string
 }

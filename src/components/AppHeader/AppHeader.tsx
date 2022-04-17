@@ -1,15 +1,16 @@
 import React from "react";
 
 import Link from "next/link";
-import { Logo, LogoutButton, RouteLink } from "@uiKit/index";
+import { Logo } from "../Logo";
+import { LogoutButton, RouteLink } from "@uiKit/index";
 import { UserBadge } from "../UserBadge";
 
-import { authRoutes, navRoutes, userRoutes } from "@constants/routes";
+import { authRoutes, navRoutes } from "@constants/routes";
 import { useAuthStore } from "@stores/authStore";
 
 import css from "./Header.module.sass";
 
-const Header = () => {
+const AppHeader = () => {
 
 	const currentUser = useAuthStore(state => state.currentUser);
 
@@ -35,7 +36,7 @@ const Header = () => {
 							) : (
 								<>
 									{authRoutes.map((route, index) => {
-										return <RouteLink route={route} key={route.href} accented={index == 0}/>
+										return <RouteLink route={route} key={route.href} accented={index === 0}/>
 									})}
 								</>
 							)
@@ -47,4 +48,4 @@ const Header = () => {
 	);
 }
 
-export default Header;
+export default AppHeader;

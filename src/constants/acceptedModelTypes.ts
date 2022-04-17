@@ -1,1 +1,1 @@
-export const acceptedModelTypes = ".obj,.mtl,.blend,.gltf,.glb";
+export const acceptedModelTypes = ".gltf";

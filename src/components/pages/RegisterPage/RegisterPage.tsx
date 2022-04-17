@@ -50,9 +50,9 @@ const RegisterPage = () => {
 				size="large"
 				className={css.headliner}
 			>
-				{"Join us now!"}
+				{"Давайте к нам!"}
 				<Header.Subheader>
-					{"Unique features ahead"}
+					{"Уникальные возможности ждут впереди"}
 				</Header.Subheader>
 			</Header>
 			<Informer error={error} hidden={!isError} />
@@ -61,7 +61,7 @@ const RegisterPage = () => {
 				className={css.form}
 			>
 				<Form.Field>
-					<label>{"E-mail address:"}</label>
+					<label>{"Электронная почта:"}</label>
 					<Controller
 						control={control}
 						name="email"
@@ -80,7 +80,7 @@ const RegisterPage = () => {
 					/>
 				</Form.Field>
 				<Form.Field>
-					<label>{"Password:"}</label>
+					<label>{"Пароль:"}</label>
 					<Controller
 						control={control}
 						name="password"
@@ -91,7 +91,7 @@ const RegisterPage = () => {
 										{...field}
 										type="password"
 										size="large" 
-										placeholder="Your password" 
+										placeholder="Ваш пароль" 
 									/>
 								)
 							}
@@ -104,7 +104,7 @@ const RegisterPage = () => {
 					positive
 					loading={isLoading}
 				>
-					{"Register"}
+					{"Зарегистрироваться"}
 				</Button>
 			</Form>
 		</PageContainer>

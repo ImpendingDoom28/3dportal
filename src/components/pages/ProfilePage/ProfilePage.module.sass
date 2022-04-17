@@ -1,5 +1,5 @@
 .profileContainer 
-	padding: 1rem 0
+	padding: 1rem
 	display: flex 
 	flex-direction: column
 	justify-content: space-between
@@ -8,8 +8,6 @@
 		display: flex
 		flex-direction: row
 		justify-content: space-between
-		& > *
-			margin: 0 0.5rem
 		.userInfoContainer 
 			display: flex 
 			justify-content: flex-start
@@ -25,4 +23,13 @@
 			width: 100%
 	.modelList
 		display: flex
-		align-items: center
+		flex-direction: column
+		.header
+			margin: 0 0 1rem 0
+			width: inherit
+			display: flex
+			justify-content: space-between
+			align-items: center
+			flex-direction: row
+			& > * 
+				margin: 0

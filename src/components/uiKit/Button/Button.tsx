@@ -13,21 +13,30 @@ type ButtonProps = SemanticButtonProps & {
 	accented?: boolean
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (
+	{
+		accented,
+		primary,
+		className, 
+		children, 
+		...rest
+	}) => {
 
 	const classnames = classNames({
 		[css.button]: true,
-		["accent"]: props.accented,
-		[props.className as string]: !!props.className 
+		[css.primary]: primary,
+		["accented"]: accented,
+		[className as string]: !!className 
 	});
 
 	return (
 		<SemanticButton 
-			{...props} 
+			{...rest}
+			accented={null}
 			className={classnames} 
 			animated={false}
 		>
-			{props.children}
+			{children}
 		</SemanticButton>
 	);
 }

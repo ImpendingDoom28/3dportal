@@ -33,7 +33,7 @@ const LoginPage = () => {
 
 	const router = useRouter();
 
-	const setTokens = useAuthStore(state => state.setTokens);
+	const setTokens = useAuthStore((state) => state.setTokens);
 	const onSubmit = async (data: any) => {
 		reset();
 		await mutateAsync(data)
@@ -50,9 +50,9 @@ const LoginPage = () => {
 				className={css.headliner}
 				textAlign="right"
 			>
-				{"Have an account?"}
+				{"Уже есть аккаунт?"}
 				<Header.Subheader>
-					{"Please welcome!"}
+					{"Добро пожаловать!"}
 				</Header.Subheader>
 			</Header>
 			<Informer error={error} hidden={!isError} />
@@ -61,7 +61,7 @@ const LoginPage = () => {
 				className={css.form}
 			>
 				<Form.Field>
-					<label>{"E-mail address:"}</label>
+					<label>{"Электронная почта:"}</label>
 					<Controller
 						control={control}
 						name="email"
@@ -80,7 +80,7 @@ const LoginPage = () => {
 					/>
 				</Form.Field>
 				<Form.Field>
-					<label>{"Password:"}</label>
+					<label>{"Пароль:"}</label>
 					<Controller
 						control={control}
 						name="password"
@@ -104,7 +104,7 @@ const LoginPage = () => {
 					positive
 					loading={isLoading}
 				>
-					{"Login !!!"}
+					{"Войти !!!"}
 				</Button>
 			</Form>
 		</PageContainer>
