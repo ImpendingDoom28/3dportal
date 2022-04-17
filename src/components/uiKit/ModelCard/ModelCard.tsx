@@ -29,6 +29,7 @@ export const ModelCard: React.FC<ModelCardProps> = (
 			<Card.Content>
 				<Card.Header>
 					<RouteLink
+						padded={false}
 						route={{
 							href: navRoutes[0].href + "/" + model.generatedName,
 							title: model.givenName

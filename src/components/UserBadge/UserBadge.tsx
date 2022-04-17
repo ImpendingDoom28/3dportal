@@ -30,6 +30,7 @@ export const UserBadge: React.FC<UserBadgeProps> = (
 	return (
 		<RouteLink 
 			className={classNames} 
+			padded={false}
 			route={
 				{
 					href: `${userRoutes[0].href}/${user.id}`,

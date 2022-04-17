@@ -8,7 +8,7 @@ import { UserBadge } from "../UserBadge";
 import { authRoutes, navRoutes } from "@constants/routes";
 import { useAuthStore } from "@stores/authStore";
 
-import css from "./Header.module.sass";
+import css from "./AppHeader.module.sass";
 
 const AppHeader = () => {
 
