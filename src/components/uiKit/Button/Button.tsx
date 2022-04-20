@@ -13,7 +13,7 @@ type ButtonProps = SemanticButtonProps & {
 	accented?: boolean
 }
 
-const Button: React.FC<ButtonProps> = (
+export const Button: React.FC<ButtonProps> = (
 	{
 		accented,
 		primary,
@@ -40,5 +40,3 @@ const Button: React.FC<ButtonProps> = (
 		</SemanticButton>
 	);
 }
-
-export default Button;

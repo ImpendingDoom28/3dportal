@@ -16,7 +16,7 @@ import { MessageType } from "@core/types";
 
 import css from "./RegisterPage.module.sass";
 
-const RegisterPage = () => {
+export const RegisterPage = () => {
 	useRedirectIfLoggedIn();
 
 	const {
@@ -110,5 +110,3 @@ const RegisterPage = () => {
 		</PageContainer>
 	);
 }
-
-export default RegisterPage;

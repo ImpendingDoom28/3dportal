@@ -1,32 +1,37 @@
 import React from "react";
 
 import { Html, useProgress } from "@react-three/drei";
-import { Progress } from "semantic-ui-react";
 
 export const ModelSpinner = () => {
 
 	const { progress } = useProgress();
 
-	console.log(progress);
+	const fixedProgress = progress.toFixed(2);
+
+	const containerStyles = {
+		height: 25,
+		width: "100%",
+		backgroundColor: "#e0e0de",
+		boxShadow: "0 1px 8px -4px #000000",
+		borderRadius: 50,
+		marginLeft: 0,
+		marginRight: 200,
+	}
+
+	const fillerStyles = {
+		height: "100%",
+		width: `${fixedProgress}%`,
+		background: "linear-gradient(to right, #B298DC, #EAAFC8)",
+		borderRadius: "inherit"
+	}
 
 	return (
 		<Html
-			style={{
-				position: "relative",
-				width: `${400}px`
-			}}
+			position={[-2.4, 0.5, 0]}
 		>
-			<Progress 
-				style={{
-					position: "absolute",
-					top: 0,
-					left: 0
-				}}
-				size="medium"
-				percent={progress}
-				indicating 
-				progress
-			/>
+			<div style={containerStyles}>
+				<div style={fillerStyles} />
+			</div>
 		</Html>
 	)
 }

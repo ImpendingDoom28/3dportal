@@ -10,7 +10,6 @@ import { RouteModel } from "@core/types";
 // Assets
 import css from "./RouteLink.module.sass";
 
-
 type RouteLinkProps = {
 	route: RouteModel,
 	passHref?: true,
@@ -19,7 +18,7 @@ type RouteLinkProps = {
 	padded?: boolean
 }
 
-const RouteLink: React.FC<RouteLinkProps> = (
+export const RouteLink: React.FC<RouteLinkProps> = (
 	{ 
 		className, 
 		route, 
@@ -43,5 +42,3 @@ const RouteLink: React.FC<RouteLinkProps> = (
 		</Link>
 	);
 }
-
-export default RouteLink;

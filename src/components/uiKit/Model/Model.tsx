@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useGLTF } from "@react-three/drei";
-import { GLTFResult, parse } from "../../../core/modules/ModelParserModule";
+import { GLTFResult, parse } from "@core/modules";
 
 type ModelProps = {
 	url: string;

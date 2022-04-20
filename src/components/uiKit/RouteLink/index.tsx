@@ -1,1 +1,1 @@
-export { default as RouteLink } from "./RouteLink";
+export * from "./RouteLink";

@@ -1,13 +1,12 @@
 import React from "react";
 
-import { Form, Header, Input, Label, Modal } from "semantic-ui-react";
-import { Button } from "@uiKit/index";
+import { Form, Input, Modal } from "semantic-ui-react";
+import { Button, FileDropZone } from "@uiKit/index";
+import { ErrorMessage } from "@hookform/error-message";
 
 import { Controller, useForm } from "react-hook-form";
 import { useUploadModel } from "@core/services";
 import { acceptedModelTypes } from "@constants/acceptedModelTypes";
-import { ErrorMessage } from "@hookform/error-message";
-import { FileDropZone } from "../../uiKit/FileDropZone";
 
 export const UploadModelForm: React.FC = () => {
 	const { 
@@ -27,16 +26,19 @@ export const UploadModelForm: React.FC = () => {
 		reset();
 		await mutateAsync(data)
 	}
+	const onClose = () => {
+		resetForm()
+	}
 
 	return (
 		<Modal
 			closeOnDimmerClick={false}
-			onClose={() => resetForm()}
+			onClose={onClose}
 			closeIcon
 			size={"tiny"}
 			trigger={
 				<Button
-					primary
+					accented
 				>
 					{"Загрузить модель"}
 				</Button>

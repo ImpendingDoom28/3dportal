@@ -1,9 +1,8 @@
 import create from "zustand";
 
 import Cookies from "js-cookie";
-import { UserTokenResponseModel } from "@core/types/models";
-import { AccessTokenBody } from "@core/types/utility";
-import { ACCESS_TOKEN_COOKIE_NAME, REFRESH_TOKEN_COOKIE_NAME } from "../constants";
+import { UserTokenResponseModel, AccessTokenBody } from "@core/types";
+import { ACCESS_TOKEN_COOKIE_NAME, REFRESH_TOKEN_COOKIE_NAME } from "@constants/index";
  
 type AuthStoreType = {
 	currentUser: UserTokenResponseModel | null,

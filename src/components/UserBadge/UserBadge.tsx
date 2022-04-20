@@ -1,8 +1,8 @@
 import React from "react";
 
-import { RouteLink } from "../uiKit";
+import { RouteLink } from "@uiKit/index";
 
-import { userRoutes } from "../../constants";
+import { userRoutes } from "@constants/index";
 import classnames from "classnames";
 
 import { UserTokenResponseModel } from "@core/types";

@@ -1,17 +1,14 @@
 import React from "react";
 
-import { Divider, Grid, Header, Loader } from "semantic-ui-react";
+import { Divider, Header, Loader } from "semantic-ui-react";
 import { UploadModelForm } from "@components/forms";
-import { ModelCard, PageContainer } from "@uiKit/index";
+import { ModelList, PageContainer } from "@uiKit/index";
 
 import { useRouter } from "next/dist/client/router";
 import { useAuthStore } from "@stores/authStore";
-import { useProfileById } from "@services/ProfileService";
-import { useGetUserModels } from "../../../core/services";
+import { useGetUserModels, useProfileById } from "@core/services";
 
 import css from "./ProfilePage.module.sass";
-
-const amountOfItemsPerRowInGrid = 3;
 
 export const ProfilePage = () => {
 	const router = useRouter();
@@ -44,62 +41,19 @@ export const ProfilePage = () => {
 	}
 
 	const isCurrentUserProfile = currentUser?.id === id;
-
-	const gridRowAdd = modelsList && Math.ceil(modelsList?.length / amountOfItemsPerRowInGrid);
-	const helperArray = new Array(gridRowAdd).fill(undefined);
-
-	const sortedByUploadDateModelsList = modelsList?.sort((a, b) => {
-		return b.uploadDate - a.uploadDate
-	});
+	const header = isCurrentUserProfile ? "Ваш список моделей" : `Список моделей ${profileData.email}`
+	const actions = isCurrentUserProfile ? <UploadModelForm /> : null;
 
 	return (
 		<div className={css.profileContainer}>
 			<Divider />
-			<div className={css.modelList}>
-				<div className={css.header}>
-					<Header size="huge">
-						{isCurrentUserProfile ? "Ваш список моделей" : `Список моделей ${profileData.email}`}
-					</Header>
-					<div>
-						{isCurrentUserProfile ? <UploadModelForm /> : null}
-					</div>	
-				</div>
-				{
-					areModelsLoading ? (
-						<Loader active/>
-					) : (
-						<Grid columns="equal" container>
-							{
-								helperArray.length > 0 ? 
-									helperArray.map((_, rowIndex) => {
-									// 0 = 0 * 3 <-> 0 * 3 + 3 = 0, 1, 2
-									// 1 = 1 * 3 <-> 1 * 3 + 2 = 4, 5
-										const newModelList = sortedByUploadDateModelsList?.slice(rowIndex * 3, rowIndex * 3 + 3);
-						
-										return (
-											<Grid.Row key={`row-${rowIndex}`}>
-												{newModelList?.map((model) => {
-
-													return (
-														<Grid.Column key={`column-${model.generatedName}`}>
-															<ModelCard 
-																model={model}
-																isCurrentUserProfile={isCurrentUserProfile}
-															/>
-														</Grid.Column>
-													);
-												})}
-											</Grid.Row>
-										)
-									}) : 
-									<Grid.Row centered>
-										{"Пока нет загруженных моделей"}
-									</Grid.Row>
-							}
-						</Grid>
-					)
-				}
-			</div>
+			<ModelList
+				actions={actions}
+				header={header}
+				isCurrentUserProfile={isCurrentUserProfile}
+				isLoading={areModelsLoading}
+				models={modelsList} 
+			/>
 		</div>
 	)
 }

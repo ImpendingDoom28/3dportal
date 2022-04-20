@@ -5,14 +5,29 @@
 	padding-bottom: 0.5rem
 	padding-left: 1rem !important
 	padding-right: 1rem !important
-	background: none !important
+
+	background-size: 100% !important
+	background-repeat: repeat !important
+	background-image: linear-gradient(to right, $accent-color, $accent-second-color) !important
+	-webkit-background-clip: text !important
+	-webkit-text-fill-color: transparent !important
+	-moz-background-clip: text !important
+	-moz-text-fill-color: transparent !important
+
 	border-image-source: linear-gradient(to right, $accent-color, $accent-second-color) !important
 	border-image-slice: 1 !important
 	border-style: solid !important
 	border-width: 3px !important
+	border-radius: 0 !important
 	color: $accent-color !important
-	transition: color $default-transition-in-time ease-in-out, background $default-transition-in-time ease-in-out, border-image-source $default-transition-in-time ease-in-out, border-image-slice $default-transition-in-time ease-in-out !important
+
+	transition: all $default-transition-in-time ease-in-out !important
 	&:hover
-		transition: color $default-transition-in-time ease-in-out, background $default-transition-in-time ease-in-out, border-image-source $default-transition-in-time ease-in-out, border-image-slice $default-transition-in-time ease-in-out !important
+		transition: all $default-transition-in-time ease-in-out !important
+		background-image: none !important
 		background: linear-gradient(to right, $accent-color, $accent-second-color) !important
-		color: $accent-comp-color !important
+		-webkit-background-clip: unset !important
+		-webkit-text-fill-color: unset !important
+		-moz-background-clip: unset !important
+		-moz-text-fill-color: unset !important
+		color: #fff !important

@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 
 import { Card, Icon } from "semantic-ui-react";
-import { ModelViewer } from "../ModelViewer";
-import { UserBadge } from "../../UserBadge";
-import { RouteLink } from "../RouteLink";
+import { UserBadge } from "@components/UserBadge";
+import { RouteLink, ModelViewer } from "@uiKit/index";
 
-import { getFormattedDateFromMs } from "../../../core/modules/DateModule";
-import { ModelFileDto } from "../../../core/types";
-import { navRoutes } from "../../../constants";
+import { getFormattedDateFromMs } from "@core/modules";
+import { ModelFileDto } from "@core/types";
+import { navRoutes } from "@constants/index";
 
 import css from "./ModelCard.module.sass";
 

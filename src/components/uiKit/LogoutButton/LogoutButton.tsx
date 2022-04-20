@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Modal } from "semantic-ui-react";
-import { Button } from "../Button";
+import { Button } from "@uiKit/index";
 
 import { useRouter } from "next/dist/client/router";
-import { navRoutes } from "../../../constants";
-import { useAuthStore } from "../../../stores";
+import { navRoutes } from "@constants/index";
+import { useAuthStore } from "@stores/authStore";
 
 export const LogoutButton = () => {
 	const [open, setOpen] = React.useState(false);

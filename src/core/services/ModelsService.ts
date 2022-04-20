@@ -47,5 +47,5 @@ export const useGetUserModels = (id: number | undefined) => {
 		{
 			refetchOnWindowFocus: false
 		}
-	)
+	);
 }

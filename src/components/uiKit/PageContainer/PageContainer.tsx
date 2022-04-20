@@ -5,6 +5,7 @@ import classNames from "classnames";
 import css from "./PageContainer.module.sass";
 
 type PageContainerProps = {
+	children: React.ReactNode
 	className?: string;
 	style?: React.CSSProperties
 }
