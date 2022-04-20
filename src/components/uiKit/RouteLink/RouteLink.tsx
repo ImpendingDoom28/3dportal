@@ -35,7 +35,7 @@ const RouteLink: React.FC<RouteLinkProps> = (
 		[css.linkPadding]: padded,
 		["accented"]: accented,
 		[className as string]: !!className
-	})
+	});
 
 	return (
 		<Link href={href} passHref>

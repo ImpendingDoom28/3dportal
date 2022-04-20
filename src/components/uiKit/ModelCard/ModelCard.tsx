@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 
 import { Card, Icon } from "semantic-ui-react";
 import { ModelViewer } from "../ModelViewer";
@@ -23,8 +23,26 @@ export const ModelCard: React.FC<ModelCardProps> = (
 		isCurrentUserProfile
 	}) => {
 
+	const [hovered, setHovered] = useState<boolean>(false);
+
+	const onMouseOver = () => {
+		setHovered(true);
+	};
+	const onMouseLeave = () => {
+		setHovered(false);
+	}
+
 	return (
-		<Card fluid>
+		<Card 
+			fluid
+			style={{
+				boxShadow: hovered ? 
+					"0 1px 15px -4px #c5c5c5, 0 0 0 1px #c5c5c5" : 
+					"0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5",
+			}}
+			onMouseOver={onMouseOver}
+			onMouseLeave={onMouseLeave}
+		>
 			<ModelViewer model={model}/>
 			<Card.Content>
 				<Card.Header>
@@ -62,10 +80,12 @@ export const ModelCard: React.FC<ModelCardProps> = (
 				</div>
 				{isCurrentUserProfile &&
 					<div>
-						<Icon 
-							name={"trash"}
-							color={"red"}
-						/>
+						<span className={css.actionText}>
+							<Icon 
+								name={"trash"}
+								color={"red"}
+							/>
+						</span>
 					</div> 
 				}
 			</Card.Content>

@@ -14,7 +14,6 @@ export const LogoutButton = () => {
 	const router = useRouter();
 
 	const onClose = () => setOpen(false);
-	const onOpen = () => setOpen(true);
 
 	const onLogout = () => {
 		resetUser();
@@ -24,10 +23,12 @@ export const LogoutButton = () => {
 	return (
 		<Modal
 			onClose={onClose}
-			onOpen={onOpen}
+			size={"tiny"}
 			open={open}
 			trigger={
-				<Button accented>
+				<Button 
+					accented
+				>
 					{"Выйти"}
 				</Button>
 			}
@@ -36,7 +37,7 @@ export const LogoutButton = () => {
 			<Modal.Header>
 				{"Хотите выйти из аккаунта?"}
 			</Modal.Header>
-			<Modal.Content image>
+			<Modal.Content>
 				<Modal.Description>
 					{"Если вы выйдите, вам нужно будет заново войти, что бы получить доступ к возможностям, доступным только вошедшим пользователям"}
 				</Modal.Description>

@@ -74,27 +74,30 @@ export const UploadModelForm: React.FC = () => {
 							render={({ message }) => <p style={{ color: "red" }}>{message}</p>}
 						/>
 					</Form.Field>
-					<Controller
-						control={control}
-						name={"files"}
-						rules={{
-							required: "Это поле обязательно"
-						}}
-						render={({ field }) =>
-							<FileDropZone 
-								onChange={(value) => {
-									field.onChange(value);
-								}}
-								name={field.name} 
-								accept={acceptedModelTypes}
-							/>
-						}
-					/>
-					<ErrorMessage
-						render={({ message }) => <p style={{ color: "red" }}>{message}</p>}
-						errors={errors} 
-						name="files" 
-					/>
+					<Form.Field required>
+						<label>{"Файл:"}</label>
+						<Controller
+							control={control}
+							name={"files"}
+							rules={{
+								required: "Это поле обязательно"
+							}}
+							render={({ field }) =>
+								<FileDropZone 
+									onChange={(value) => {
+										field.onChange(value);
+									}}
+									name={field.name} 
+									accept={acceptedModelTypes}
+								/>
+							}
+						/>
+						<ErrorMessage
+							render={({ message }) => <p style={{ color: "red" }}>{message}</p>}
+							errors={errors} 
+							name="files" 
+						/>
+					</Form.Field>
 					<Button 
 						type="submit" 
 						animated

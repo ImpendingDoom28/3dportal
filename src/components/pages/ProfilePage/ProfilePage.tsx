@@ -27,8 +27,12 @@ export const ProfilePage = () => {
 		isLoading: areModelsLoading
 	} = useGetUserModels(id as number | undefined);
 
-	console.log(id);
-	
+	if(isProfileLoading) {
+		return (
+			<Loader active size="big"/>
+		)
+	}
+
 	if(!profileData) { 
 		return (
 			<PageContainer>
@@ -39,15 +43,13 @@ export const ProfilePage = () => {
 		)
 	}
 
-	if(isProfileLoading) return <Loader active size="big"/>
-
 	const isCurrentUserProfile = currentUser?.id === id;
 
 	const gridRowAdd = modelsList && Math.ceil(modelsList?.length / amountOfItemsPerRowInGrid);
 	const helperArray = new Array(gridRowAdd).fill(undefined);
 
 	const sortedByUploadDateModelsList = modelsList?.sort((a, b) => {
-		return +b.uploadDate - +a.uploadDate
+		return b.uploadDate - a.uploadDate
 	});
 
 	return (
