@@ -30,8 +30,6 @@ export const ModelViewer: React.FC<ModelPreviewProps> = (
 	// }, [canvasRef]);
 
 	const onMouseEnter = () => {
-		console.log("called onMouseEnter");
-		
 		if(!shouldLoadModel) {
 			const timeoutId = setTimeout(() => {
 				setShouldLoadModel(true);
@@ -41,7 +39,6 @@ export const ModelViewer: React.FC<ModelPreviewProps> = (
 		}
 	};
 	const onMouseLeave = () => {
-		console.log("called onMouseLeave", hoverTimeout);
 		if(hoverTimeout) {
 			clearTimeout(hoverTimeout);
 		}
@@ -84,10 +81,14 @@ export const ModelViewer: React.FC<ModelPreviewProps> = (
 				</Suspense>
 				{!shouldLoadModel && (
 					<Html center>
-						<div style={{ 
-							minWidth: 350,
-							textAlign: "center"
-						}}>{"Наведитесь, чтобы посмотреть модель"}</div>
+						<div 
+							style={{ 
+								minWidth: 350,
+								textAlign: "center"
+							}}
+						>
+							{"Наведитесь, чтобы посмотреть модель"}
+						</div>
 					</Html>
 				)}
 			</Canvas>
