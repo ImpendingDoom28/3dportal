@@ -36,7 +36,7 @@ export const ModelViewer: React.FC<ModelPreviewProps> = (
 			const timeoutId = setTimeout(() => {
 				setShouldLoadModel(true);
 				setHoverTimeout(null);
-			}, 1000);
+			}, 500);
 			setHoverTimeout(timeoutId);
 		}
 	};
