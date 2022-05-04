@@ -11,6 +11,9 @@ const isVarName = (str: string) => {
 	)
 	return regex.test(str)
 }
+const generateRandomKey = () => {
+	return crypto.randomUUID();
+}
 
 const defaultOptions = {
 	instanceall: undefined,
@@ -134,7 +137,9 @@ export function parse(gltfResult: GLTFResult, options = defaultOptions) {
 	const handleProps = (obj: THREEObjectType) => {
 		const { type, node, instanced, animated } = getObjectInfo(obj);
 
-		const objectProps: Record<string, any> = {}
+		const objectProps: Record<string, any> = {
+			key: generateRandomKey(),
+		}
 
 		// Include names when output is uncompressed or morphTargetDictionaries are present
 		if (
@@ -284,7 +289,7 @@ export function parse(gltfResult: GLTFResult, options = defaultOptions) {
 
 		// Bail out on lights and bones
 		if (type === "bone") {
-			return <primitive object={node} />
+			return <primitive object={node} key={generateRandomKey()}/>
 		}
 
 		// Collect children
@@ -469,5 +474,5 @@ export function parse(gltfResult: GLTFResult, options = defaultOptions) {
 
 	const scene = print(objects, gltfResult, gltfResult.scene);
 
-	return <group dispose={null}>{scene}</group>
+	return <group dispose={null} key={generateRandomKey()}>{scene}</group>
 }
