@@ -12,7 +12,8 @@ import { navRoutes } from "@constants/index";
 import css from "./ModelCard.module.sass";
 
 type ModelCardProps = {
-	model: ModelFileDto
+	model: ModelFileDto;
+	display: "vertical" | "horizontal"
 	isCurrentUserProfile?: boolean
 }
 
@@ -32,7 +33,7 @@ export const ModelCard: React.FC<ModelCardProps> = (
 	}
 
 	return (
-		<Card 
+		<Card
 			fluid
 			style={{
 				boxShadow: hovered ? 

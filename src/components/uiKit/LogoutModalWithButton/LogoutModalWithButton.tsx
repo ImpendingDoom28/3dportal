@@ -7,13 +7,14 @@ import { useRouter } from "next/dist/client/router";
 import { navRoutes } from "@constants/index";
 import { useAuthStore } from "@stores/authStore";
 
-export const LogoutButton = () => {
+export const LogoutModalWithButton = () => {
 	const [open, setOpen] = React.useState(false);
 
 	const resetUser = useAuthStore((state) => state.resetStore);
 	const router = useRouter();
 
 	const onClose = () => setOpen(false);
+	const onOpen = () => setOpen(true);
 
 	const onLogout = () => {
 		resetUser();
@@ -22,6 +23,7 @@ export const LogoutButton = () => {
 
 	return (
 		<Modal
+			onOpen={onOpen}
 			onClose={onClose}
 			size={"tiny"}
 			open={open}

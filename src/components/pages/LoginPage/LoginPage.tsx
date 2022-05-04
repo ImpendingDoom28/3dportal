@@ -15,7 +15,7 @@ import { navRoutes } from "@constants/routes";
 
 import css from "./LoginPage.module.sass";
 
-const LoginPage = () => {
+export const LoginPage = () => {
 	useRedirectIfLoggedIn();
 
 	const {
@@ -110,5 +110,3 @@ const LoginPage = () => {
 		</PageContainer>
 	);
 }
-
-export default LoginPage;

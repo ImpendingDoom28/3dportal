@@ -9,9 +9,9 @@ export const ModelSpinner = () => {
 	const fixedProgress = progress.toFixed(2);
 
 	const containerStyles = {
-		height: 25,
+		height: 15,
 		width: "100%",
-		backgroundColor: "#e0e0de",
+		backgroundColor: "#000000aa",
 		boxShadow: "0 1px 8px -4px #000000",
 		borderRadius: 50,
 		marginLeft: 0,
@@ -25,12 +25,21 @@ export const ModelSpinner = () => {
 		borderRadius: "inherit"
 	}
 
+	const labelStyles = { 
+		display: "flex", 
+		alignItems: "center", 
+		justifyContent: "center",
+	}
+
 	return (
 		<Html
-			position={[-2.4, 0.5, 0]}
+			position={[-2.7, 0.3, 0]}
 		>
 			<div style={containerStyles}>
 				<div style={fillerStyles} />
+				<span style={labelStyles}>
+					{"Загрузка 3D модели"}
+				</span>
 			</div>
 		</Html>
 	)

@@ -72,6 +72,7 @@ export const ModelList: React.FC<ModelListProps> = (
 													<Grid.Column key={`column-${model.generatedName}`}>
 														<ModelCard 
 															model={model}
+															display={newModelList.length === 1 ? "vertical" : "horizontal"}
 															isCurrentUserProfile={isCurrentUserProfile}
 														/>
 													</Grid.Column>

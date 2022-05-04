@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 import { Logo } from "../Logo";
-import { LogoutButton, RouteLink } from "@uiKit/index";
+import { LogoutModalWithButton, RouteLink } from "@uiKit/index";
 import { UserBadge } from "../UserBadge";
 
 import { authRoutes, navRoutes } from "@constants/routes";
@@ -31,7 +31,7 @@ const AppHeader = () => {
 							currentUser ? (
 								<>
 									<UserBadge user={currentUser} /> 
-									<LogoutButton />
+									<LogoutModalWithButton />
 								</>
 							) : (
 								<>

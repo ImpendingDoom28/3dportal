@@ -46,6 +46,12 @@ export const ProfilePage = () => {
 
 	return (
 		<div className={css.profileContainer}>
+			<Header
+				size="huge"
+				textAlign="center"
+			>
+				{"Профиль"}
+			</Header>
 			<Divider />
 			<ModelList
 				actions={actions}

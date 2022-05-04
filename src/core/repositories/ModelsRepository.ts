@@ -40,4 +40,14 @@ export class ModelsRepository extends BaseRepository<ModelsUrls> {
 				console.error("Error: ", err)
 			});
 	}
+
+	public getModels() {
+		return this.api.get(
+			`${this.urls.models}`
+		)
+			.then((response) => response.data)
+			.catch(err => {
+				console.error("Error: ", err)
+			});
+	}
 }

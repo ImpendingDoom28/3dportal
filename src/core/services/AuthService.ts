@@ -35,6 +35,7 @@ export const useRedirectIfLoggedIn = () => {
 	const { accessToken } = useAuthStore();
 	const router = useRouter();
 	if (accessToken) {
-		router.push(navRoutes[0].href)
+		router.push(navRoutes[0].href);
+		return null;
 	}
 }

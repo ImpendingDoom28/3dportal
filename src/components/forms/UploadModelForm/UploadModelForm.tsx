@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Form, Input, Modal } from "semantic-ui-react";
 import { Button, FileDropZone } from "@uiKit/index";
@@ -9,6 +9,8 @@ import { useUploadModel } from "@core/services";
 import { acceptedModelTypes } from "@constants/acceptedModelTypes";
 
 export const UploadModelForm: React.FC = () => {
+	const [open, setOpen] = useState<boolean>(false);
+
 	const { 
 		handleSubmit, 
 		control, 
@@ -24,17 +26,28 @@ export const UploadModelForm: React.FC = () => {
 
 	const onSubmit = async (data: any) => {
 		reset();
-		await mutateAsync(data)
+		await mutateAsync(data);
+		setOpen(false);
+	}
+	const onOpen = () => {
+		setOpen(true);
 	}
 	const onClose = () => {
-		resetForm()
+		resetForm();
+		setOpen(false);
 	}
 
 	return (
 		<Modal
+			open={open}
+			onOpen={onOpen}
 			closeOnDimmerClick={false}
 			onClose={onClose}
 			closeIcon
+			style={{
+				// Magic number to be above the canvases
+				zIndex: "16711833"
+			}}
 			size={"tiny"}
 			trigger={
 				<Button

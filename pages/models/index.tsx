@@ -1,9 +1,14 @@
 import React from "react";
+
+import { ModelsPage } from "@components/pages";
+
 import type { NextPage } from "next";
 
-const ModelsPage: NextPage = () => {
+const Models: NextPage = () => {
 
-	return <div>{"models page"}</div>
+	return (
+		<ModelsPage/>
+	)
 }
 
-export default ModelsPage;
+export default Models;
