@@ -2,7 +2,7 @@ import { AxiosError } from "axios";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { ModelsRepository } from "@core/repositories";
 import { MessageDto, ModelFileDto, ModelForm } from "@core/types";
-import { useAuthStore } from "../../stores";
+import { useAuthStore } from "@stores/index";
 
 const repository = new ModelsRepository();
 
@@ -20,7 +20,7 @@ export const useUploadModel = () => {
 	const queryClient = useQueryClient();
 
 	return useMutation<any, AxiosError<MessageDto>, ModelForm>(
-		queryKeys.profileUploadModel,
+		[queryKeys.profileUploadModel],
 		(form) => {
 			const { files, givenName } = form;
 			const model = files[0];
@@ -32,7 +32,9 @@ export const useUploadModel = () => {
 		},
 		{
 			onSuccess: () => {
-				queryClient.invalidateQueries(queryKeys.profileGetModels)
+				queryClient.invalidateQueries({
+					queryKey: [queryKeys.profileGetModels]
+				})
 			}
 		}
 	)
@@ -53,8 +55,8 @@ export const useGetUserModels = (id: number | undefined) => {
 
 // TODO: Add filters
 export const useGetModels = () => {
-	return useQuery<any, AxiosError<MessageDto>, ModelFileDto[]>(
-		queryKeys.modelsGetModels,
+	return useQuery<any, AxiosError<MessageDto>, any>(
+		[queryKeys.modelsGetModels],
 		() => {
 			return repository.getModels();
 		},

@@ -11,7 +11,7 @@ export const ModelsPage = () => {
 	return (
 		<PageContainer>
 			<ModelList 
-				models={models} 
+				models={models?.content} 
 				isLoading={isLoading} 
 				header={"Последние загруженные модели"} 
 				isCurrentUserProfile={false} 
